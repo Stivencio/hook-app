@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { MultipleCustomHooks } from "./Components/03-examples/MultipleCustomHooks.js";
+import { MultipleCustomHooks } from "./Components/03-examples/MultipleCustomHooks.jsx";
 // import { HookApp } from "./Hooks/HookApp";
 // import { CounterApp } from "./Components/01-useState/CounterApp.js";
 // import { CounterWithCustomHook } from "./Components/01-useState/CounterWithCustomHook.js";
