@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
 } from "react-router-dom";
 import { NavBar } from "./NavBar.jsx";
 
@@ -12,20 +12,22 @@ import { LoginScreen } from "./LoginScreen.jsx";
 import { HomeScreen } from "./HomeScreen.jsx";
 
 export const AppRouter = () => {
-  return (
-    <Router>
-      <div>
-        <NavBar />
-        <div className="container">
-          <Switch>
-            <Route exact path="/" component={HomeScreen} />
-            <Route exact path="/about" component={AboutScreen} />
-            <Route exact path="/login" component={LoginScreen} />
-            <Redirect to="/" />
-            {/* <Route component={HomeScreen} /> */}
-          </Switch>
-        </div>
-      </div>
-    </Router>
-  );
+	return (
+		<Router>
+			<div>
+				<NavBar />
+				<div className="container">
+					<Switch>
+						<Route exact path="/" component={HomeScreen} />
+						<Route exact path="/about" component={AboutScreen} />
+						<Route exact path="/login" component={LoginScreen} />
+
+						{/* si no se encuentra ninguna ruta se redirecciona a HomeScreen*/}
+						<Redirect to="/" />
+						{/* <Route component={HomeScreen} /> */}
+					</Switch>
+				</div>
+			</div>
+		</Router>
+	);
 };
