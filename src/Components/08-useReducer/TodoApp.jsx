@@ -19,15 +19,20 @@ export const TodoApp = () => {
 	}, [todos]);
 
 	const handleDelete = (todoId) => {
-		console.log(todoId);
-
-		// crear la action
 		const action = {
 			type: "delete",
 			payload: todoId,
 		};
-		//dispatch
 		dispatch(action);
+	};
+
+	const handleToggle = (todoId) => {
+		console.log(todoId);
+
+		dispatch({
+			type: "toggle",
+			payload: todoId,
+		});
 	};
 
 	const handleSubmit = (e) => {
@@ -62,7 +67,10 @@ export const TodoApp = () => {
 					<ul className="list-group list-group-flush">
 						{todos.map((el, idx) => (
 							<li key={el.id} className="list-group-item">
-								<p className="text-center">
+								<p
+									className={`${el.done && "complete"}`}
+									onClick={() => handleToggle(el.id)}
+								>
 									{idx + 1}. {el.desc}
 								</p>
 								<button
